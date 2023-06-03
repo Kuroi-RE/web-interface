@@ -10,6 +10,7 @@ export default function Home() {
     easing: "easeIn",
     translateX: [-40, 100],
   });
+
   return (
     <div className="flex flex-col">
       <section
@@ -63,24 +64,24 @@ export default function Home() {
           <div className="stats w-80 text-center stats-vertical lg:stats-horizontal lg:w-[800px] shadow">
             <div className="stat ">
               <div className="stat-title">Tools Used</div>
-              <div className="stat-value">30K</div>
-              <div className="stat-desc">Jan 2023 - April 2023</div>
+              <div className="stat-value">1K</div>
+              <div className="stat-desc">May 2023 - April 2023</div>
             </div>
 
             <div className="stat">
               <div className="stat-title">Tools Count</div>
-              <div className="stat-value">20</div>
-              <div className="stat-desc">+5 (May 2023)</div>
+              <div className="stat-value">4</div>
+              <div className="stat-desc">+3 (May 2023)</div>
             </div>
 
             <div className="stat">
               <div className="stat-title">Tools Available</div>
-              <div className="stat-value">20</div>
-              <div className="stat-desc">100%</div>
+              <div className="stat-value">2</div>
+              <div className="stat-desc">60%</div>
             </div>
             <div className="stat">
               <div className="stat-title">Total Page Views</div>
-              <div className="stat-value">89,400</div>
+              <div className="stat-value">10,400</div>
               <div className="stat-desc">15% more than last month</div>
             </div>
           </div>
@@ -280,12 +281,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="card-actions justify-end">
-                  <Link
-                    onClick={() =>
-                      window.alert("This features not available now.")
-                    }
-                    className="btn"
-                  >
+                  <Link to="/instagram-downloader" className="btn">
                     USE NOW
                   </Link>
                 </div>
@@ -326,12 +322,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="card-actions justify-end">
-                  <Link
-                    onClick={() =>
-                      window.alert("This features not available now.")
-                    }
-                    className="btn"
-                  >
+                  <Link to="/tiktok-downloader" className="btn">
                     USE NOW
                   </Link>
                 </div>

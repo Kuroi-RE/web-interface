@@ -1,22 +1,12 @@
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   useEffect(() => {
     themeChange(false);
   }, []);
-
-  const pagePath = useLocation().pathname;
-
-  let Path = [];
-
-  if (pagePath === "/") {
-    Path.push("#start", "#stats", "#tool");
-  } else {
-    Path.push("/", "/#stats", "/#tools");
-  }
 
   return (
     <div className="navbar bg-base-100 fixed top-0 right-0 left-0 z-50">
@@ -43,13 +33,10 @@ export default function Nav() {
             className="menu menu-compact dropdown-content mt-3 p-3 shadow-sm shadow-slate-200 bg-base-100 rounded-box w-52"
           >
             <li>
-              <a href={Path[0]}>HOME</a>
+              <Link to="/">HOME</Link>
             </li>
             <li>
-              <a href={Path[1]}>STATS</a>
-            </li>
-            <li>
-              <a href={Path[2]}>LIST TOOL</a>
+              <Link to="/docs">DEVELOPER</Link>
             </li>
           </ul>
         </div>
