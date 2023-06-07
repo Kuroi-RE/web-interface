@@ -6,9 +6,15 @@ export default function Footer() {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Developer</a>
+        <a className="link link-hover" href="/about">
+          About us
+        </a>
+        <a className="link link-hover" href="">
+          Contact
+        </a>
+        <a className="link link-hover" href="">
+          Developer
+        </a>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
@@ -26,7 +32,7 @@ export default function Footer() {
           </a>
           <a>
             <svg
-              onClick={() => window.open("youtube.com")}
+              onClick={() => openLink("youtube.com")}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -38,7 +44,7 @@ export default function Footer() {
           </a>
           <a>
             <svg
-              onClick={() => window.open("facebook.com")}
+              onClick={() => openLink("facebook.com")}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"

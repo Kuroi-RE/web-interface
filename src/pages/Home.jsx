@@ -1,6 +1,7 @@
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { useParallax } from "react-scroll-parallax";
 import { Link } from "react-router-dom";
+import Cards from "../components/Home/Cards/Cards";
 export default function Home() {
   const parallax = useParallax({
     easing: "easeInQuad",
@@ -12,7 +13,7 @@ export default function Home() {
   });
 
   return (
-    <div className="flex flex-col">
+    <main className="flex flex-col font-primary">
       <section
         id="start"
         ref={parallax.ref}
@@ -23,7 +24,7 @@ export default function Home() {
             <h3 className="text-xs px-3 md:text-xl lg:text-2xl">
               # Free to use
             </h3>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary">
+            <h1 className="text-5xl font-secondary tracking-wider md:text-7xl lg:text-8xl font-bold text-primary">
               IN ONE TOOLS APPLICATION
             </h1>
             <p className="text-lg px-2 md:text-xl lg:text-2xl">
@@ -87,338 +88,15 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <a href="#tool" className="btn btn-success px-10 lg:w-52">
-            TOOLS
+          <a href="#menu" className="btn btn-success px-10 lg:w-52">
+            TRY TOOL
           </a>
         </div>
       </section>
 
-      <section
-        className="h-screen flex flex-col items-center gap-5 pt-24"
-        id="tool"
-      >
-        <div>
-          <h1 className="text-4xl font-bold"> TOOL INFORMATION</h1>
-        </div>
-
-        <div className="overflow-x-auto max-[1024px]:w-full">
-          <table className="table w-44">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>
-                  <label>
-                    <input type="checkbox" disabled className="checkbox" />
-                  </label>
-                </th>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="checkbox"
-                      defaultChecked
-                      className="checkbox"
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div>
-                      <div className="font-bold">INSTAGRAM DOWNLOADER</div>
-                      <div className="text-sm opacity-50">
-                        Downloader Category
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Download Videos from instagram just with URL!</td>
-              </tr>
-              {/* row 2 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="checkbox"
-                      defaultChecked
-                      className="checkbox"
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div>
-                      <div className="font-bold">TWITTER DOWNLOADER</div>
-                      <div className="text-sm opacity-50">
-                        Downloader Category
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Download Videos from Twitter just with URL!</td>
-              </tr>
-              {/* row 3 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="checkbox"
-                      defaultChecked
-                      className="checkbox"
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div>
-                      <div className="font-bold">TIKTOK DOWNLOADER</div>
-                      <div className="text-sm opacity-50">
-                        Download Category
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Download Videos from Tiktok just with URL!</td>
-              </tr>
-              {/* row 4 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="checkbox"
-                      defaultChecked
-                      className="checkbox"
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div>
-                      <div className="font-bold">FACEBOOK DOWNLOADER</div>
-                      <div className="text-sm opacity-50">
-                        Downloader Category
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Download Videos from Facebook just with URL!</td>
-              </tr>
-              {/* row 4 */}
-              <tr>
-                <th>
-                  <label>
-                    <input
-                      type="checkbox"
-                      defaultChecked
-                      className="checkbox"
-                    />
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div>
-                      <div className="font-bold">RANDOM QUOTES</div>
-                      <div className="text-sm opacity-50">Anime Category</div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  Get a random quotes by Anime character just with clicked
-                  button!
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <a href="#menu" className="btn btn-info">
-            TRY THE TOOL
-          </a>
-        </div>
+      <section className="min-h-screen " id="menu">
+        <Cards />
       </section>
-      <section
-        className="min-h-screen flex flex-col items-center gap-5 pt-24 pb-5 "
-        id="menu"
-      >
-        <div className="flex flex-col md:gap-20">
-          <div className="px-10 py-5 flex items-center flex-col md:flex-row md:gap-20 gap-5">
-            {/* MENU 1 */}
-            <div className="card w-72 bg-primary text-primary-content">
-              <div className="card-body">
-                <h2 className="card-title">Instagram Downloader</h2>
-                <p>Download a videos from Story, Reel or Post</p>
-                <div className="rating rating-md">
-                  <input
-                    type="radio"
-                    name="rating-7"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-7"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-7"
-                    className="mask mask-star-2 bg-red-500"
-                    defaultChecked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-7"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-7"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                </div>
-                <div className="card-actions justify-end">
-                  <Link to="/instagram-downloader" className="btn">
-                    USE NOW
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* MENU 1 */}
-            {/* MENU 2 */}
-            <div className="card w-72 bg-primary text-primary-content">
-              <div className="card-body">
-                <h2 className="card-title">Tiktok Downloader</h2>
-                <p>Download a videos from Tiktok, Without Watermark</p>
-                <div className="rating rating-md">
-                  <input
-                    type="radio"
-                    name="rating-5"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-5"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-5"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-5"
-                    className="mask mask-star-2 bg-red-500"
-                    defaultChecked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-5"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                </div>
-                <div className="card-actions justify-end">
-                  <Link to="/tiktok-downloader" className="btn">
-                    USE NOW
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* MENU 2 */}
-          </div>
-          <div className="px-10 flex flex-col md:flex-row md:gap-20 gap-5">
-            {/* MENU 3 */}
-            <div className="card w-72 bg-primary text-primary-content">
-              <div className="card-body">
-                <h2 className="card-title">Quotes</h2>
-                <p>Get a random quotes by Anime character!</p>
-                <div className="rating rating-md">
-                  <input
-                    type="radio"
-                    name="rating-4"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-4"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-4"
-                    className="mask mask-star-2 bg-red-500"
-                    defaultChecked
-                  />
-                  <input
-                    type="radio"
-                    name="rating-4"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-4"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                </div>
-                <div className="card-actions justify-end">
-                  <Link className="btn" to="/get-quotes">
-                    USE NOW
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="card w-72 bg-primary text-primary-content">
-              <div className="card-body">
-                <h2 className="card-title">Anime Wrapper</h2>
-                <p>Get the details of the anime you want</p>
-                <div className="rating rating-md">
-                  <input
-                    type="radio"
-                    name="rating-9"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-9"
-                    defaultChecked
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-9"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-9"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                  <input
-                    type="radio"
-                    name="rating-9"
-                    className="mask mask-star-2 bg-red-500"
-                  />
-                </div>
-                <div className="card-actions justify-end">
-                  <Link
-                    onClick={() =>
-                      window.alert("This features not available now.")
-                    }
-                    className="btn"
-                  >
-                    USE NOW
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* MENU 3 */}
-          </div>
-        </div>
-      </section>
-    </div>
+    </main>
   );
 }

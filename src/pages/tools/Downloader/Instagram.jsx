@@ -1,19 +1,9 @@
 import { useState } from "react";
+import Alerts from "../../../components/Utility/Alerts";
 
 export default function Instagram() {
-  const inputUser = document.querySelector("#input");
+  const [Input, SetInput] = useState("You're not input anything");
 
-  const [Input, SetInput] = useState();
-
-  const Clicked = () => {
-    try {
-      const InputFromUser = inputUser.value;
-
-      SetInput(InputFromUser ? InputFromUser : "You're not input anything");
-    } catch (Error) {
-      return;
-    }
-  };
   return (
     <div className="h-screen pt-[4rem] flex flex-col items-center ">
       <div className="flex flex-col items-center gap-10 w-full py-10 bg-gradient-to-r from-[#C13584] to-[#833AB4]">
@@ -27,8 +17,9 @@ export default function Instagram() {
           <div className="flex flex-col items-center md:flex-row gap-4">
             <div className="rounded-md border w-full flex  items-center py-4 px-3 bg-white text-black">
               <input
-                type="text"
+                type="url"
                 id="input"
+                onChange={(e) => SetInput(e.target.value)}
                 required
                 placeholder="Type here"
                 className="bg-transparent border-none w-80 outline-none"
@@ -36,31 +27,11 @@ export default function Instagram() {
             </div>
 
             <div>
-              {/* You can open the modal using ID.showModal() method */}
-              <label
-                htmlFor="my-modal-3"
-                onClick={() => Clicked()}
-                className="btn btn-success font-semibold"
-              >
-                DOWNLOAD
-              </label>
-
-              {/* Put this part before </body> tag */}
-              <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-              <div className="modal">
-                <div className="modal-box relative">
-                  <label
-                    htmlFor="my-modal-3"
-                    className="btn btn-sm btn-circle absolute right-2 top-2"
-                  >
-                    ✕
-                  </label>
-                  <h3 className="text-lg font-bold">NOTES</h3>
-                  <p className="py-4">
-                    This Features still Development. Your input: {Input}
-                  </p>
-                </div>
-              </div>
+              <Alerts
+                buttonChildren="DOWNLOAD"
+                className="btn"
+                message={`This Features still Development. Your input: ${Input}`}
+              />
             </div>
           </div>
         </div>

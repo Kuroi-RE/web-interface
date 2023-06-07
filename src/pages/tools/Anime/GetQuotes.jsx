@@ -4,20 +4,39 @@ import axios from "axios";
 export default function GetQuotes() {
   const Uri = "https://katanime.vercel.app/api/getrandom";
 
+  const [Language, SetLanguage] = useState("Indonesia");
+
   const [Quotes, SetQuotes] = useState({
-    quote: "Ramadhan adalah ramadhan",
+    quote: "Click GET QUOTE button and the quote will be display in here",
     char: "-Ramadhan-",
+    anime: "N/a",
   });
 
   const GettingQuote = async () => {
     const data = (await axios.get(Uri)).data.result[0];
+    if (Language.length > 4) {
+      let lang;
+      if (Language === "English") {
+        lang = data.english;
+      } else {
+        lang = data.indo;
+      }
 
-    SetQuotes({
-      quote: `"${data.indo}"`,
-      char: `- ${data.character} -`,
-      anime: `${data.anime}`,
-    });
+      SetQuotes({
+        quote: `"${lang}"`,
+        char: `- ${data.character} -`,
+        anime: `${data.anime}`,
+      });
+    }
   };
+
+  // function SelectHandle(obj) {
+  //   if (obj.value === "English") {
+  //     SetLanguage("english");
+  //   } else {
+  //     SetLanguage("indo");
+  //   }
+  // }
 
   function copy() {
     navigator.clipboard.writeText(Quotes.quote);
@@ -32,10 +51,27 @@ export default function GetQuotes() {
         <div>
           <p className="italic">{Quotes.quote}</p>
           <span className="font-bold"> {Quotes.char} </span>
-          <h3 className="font-semibold">{Quotes.anime}</h3>
+          <h3 className="font-semibold">
+            <span className="font-bold">Anime: </span>
+            {Quotes.anime}
+          </h3>
         </div>
       </div>
-      <div className="flex flex-col gap-3">
+
+      <div className="flex flex-col items-center gap-3">
+        <div>
+          <select
+            defaultValue={"NOTE"}
+            onChange={(e) => SetLanguage(e.target.value)}
+            className="select select-info w-full max-w-xs"
+          >
+            <option disabled value="NOTE">
+              Select language
+            </option>
+            <option>Indonesia</option>
+            <option>English</option>
+          </select>
+        </div>
         <div>
           <button
             className="btn btn-accent w-28 font-semibold"

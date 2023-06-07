@@ -2,10 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      animation: {
-        all: "all 1s ease-in normal",
-      },
+    extend: {},
+    fontFamily: {
+      primary: ["Poppins"],
+      secondary: ["Patua One"],
     },
   },
   plugins: [require("daisyui")],

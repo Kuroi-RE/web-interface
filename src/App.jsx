@@ -6,6 +6,8 @@ import Docs from "./pages/Dev/docs";
 import GetQuotes from "./pages/tools/Anime/GetQuotes";
 import Tiktok from "./pages/tools/Downloader/Tiktok";
 import Instagram from "./pages/tools/Downloader/Instagram";
+import About from "./pages/About";
+import QrCode from "./pages/tools/General/QrCode";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/docs" element={<Docs />} />
             {/* Anime Route */}
             <Route path="/get-quotes" element={<GetQuotes />} />
@@ -22,6 +25,9 @@ function App() {
             <Route path="/tiktok-downloader" element={<Tiktok />} />
             <Route path="/instagram-downloader" element={<Instagram />} />
             {/* DOWNLOADER */}
+            {/* GENERAL */}
+            <Route path="/qrcode-maker" element={<QrCode />} />
+            {/* GENERAL */}
           </Route>
         </Routes>
       </Wrapper>
