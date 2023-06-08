@@ -7,12 +7,7 @@ const About = () => {
       <div className="flex flex-row flex-wrap gap-2">
         <div>
           <h2 className="text-2xl font-semibold">About us</h2>
-          <p className="max-w-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-            quasi voluptates deleniti eligendi. Similique, aspernatur, alias
-            sapiente ullam tenetur dignissimos ducimus consequatur possimus rem
-            architecto eos eveniet, sit eum id?
-          </p>
+          <p className="max-w-lg">Small groub with only one human.</p>
         </div>
 
         <div>

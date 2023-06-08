@@ -1,3 +1,6 @@
+import Ram from "./Utility/Link";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   const openLink = (link) => {
     window.open(link);
@@ -9,18 +12,18 @@ export default function Footer() {
         <a className="link link-hover" href="/about">
           About us
         </a>
-        <a className="link link-hover" href="">
+        <Link className="link link-hover" to="/">
           Contact
-        </a>
-        <a className="link link-hover" href="">
+        </Link>
+        <Link className="link link-hover" to="/docs">
           Developer
-        </a>
+        </Link>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
-              onClick={() => openLink("https://google.com")}
+              onClick={() => openLink(Ram().twitter)}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -32,7 +35,7 @@ export default function Footer() {
           </a>
           <a>
             <svg
-              onClick={() => openLink("youtube.com")}
+              onClick={() => openLink(Ram().instagram)}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -44,7 +47,7 @@ export default function Footer() {
           </a>
           <a>
             <svg
-              onClick={() => openLink("facebook.com")}
+              onClick={() => openLink(Ram().facebook)}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"

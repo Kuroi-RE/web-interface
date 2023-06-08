@@ -42,26 +42,25 @@ function Cards() {
               </div>
             );
           })}
-
-          <div className="d-grid mt-3 mb-5">
-            {isCompleted ? (
-              <button
-                onClick={LoadMore}
-                type="button"
-                className="btn btn-error disabled"
-              >
-                Completed
-              </button>
-            ) : (
-              <button
-                onClick={LoadMore}
-                type="button"
-                className="btn btn-success"
-              >
-                Load More
-              </button>
-            )}
-          </div>
+        </div>
+        <div className="flex items-center justify-center mt-3 mb-5">
+          {isCompleted ? (
+            <button
+              onClick={LoadMore}
+              type="button"
+              className="btn btn-error disabled"
+            >
+              Completed
+            </button>
+          ) : (
+            <button
+              onClick={LoadMore}
+              type="button"
+              className="btn btn-success"
+            >
+              Load More
+            </button>
+          )}
           {/* CARDs  */}
         </div>
       </div>
