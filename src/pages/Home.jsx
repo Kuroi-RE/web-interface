@@ -1,22 +1,25 @@
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import { useParallax } from "react-scroll-parallax";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import Cards from "../components/Home/Cards/Cards";
+import Stats from "../components/Home/Stats/Stats";
+import { useEffect } from "react";
 export default function Home() {
-  const parallax = useParallax({
-    easing: "easeInQuad",
-    translateX: [-30, 100],
-  });
-  const parallax2 = useParallax({
-    easing: "easeIn",
-    translateX: [-40, 100],
-  });
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
 
   return (
-    <main className="flex flex-col font-primary">
+    <main className="flex flex-col font-primary overflow-hidden">
       <section
         id="start"
-        ref={parallax.ref}
+        data-aos="zoom-in-up"
+        // ref={parallax.ref}
         className="h-screen flex flex-col gap-12 md:justify-center lg:justify-start lg:pt-32 lg:flex-row lg:gap-24"
       >
         <div className="flex flex-col pt-36 px-6 md:px-0 gap-6">
@@ -31,7 +34,7 @@ export default function Home() {
               You can use a tool very easy, free, safe. Try it now!
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 px-5">
             <Link to="/docs" className="btn btn-info">
               DEV
             </Link>
@@ -54,47 +57,27 @@ export default function Home() {
         </div>
       </section>
       <section
-        ref={parallax2.ref}
         id="stats"
+        // ref={parallax2.ref}
+
         className="h-screen flex flex-col items-center gap-5 justify-center"
       >
-        <div>
+        <div data-aos="zoom-in">
           <h1 className="text-4xl font-bold font-serif lg:text-5xl">WE HAVE</h1>
         </div>
-        <div>
+        <div data-aos="zoom-in">
           <div className="stats w-80 text-center stats-vertical lg:stats-horizontal lg:w-[800px] shadow">
-            <div className="stat ">
-              <div className="stat-title">Tools Used</div>
-              <div className="stat-value">1K</div>
-              <div className="stat-desc">May 2023 - April 2023</div>
-            </div>
-
-            <div className="stat">
-              <div className="stat-title">Tools Count</div>
-              <div className="stat-value">4</div>
-              <div className="stat-desc">+3 (May 2023)</div>
-            </div>
-
-            <div className="stat">
-              <div className="stat-title">Tools Available</div>
-              <div className="stat-value">2</div>
-              <div className="stat-desc">60%</div>
-            </div>
-            <div className="stat">
-              <div className="stat-title">Total Page Views</div>
-              <div className="stat-value">10,400</div>
-              <div className="stat-desc">15% more than last month</div>
-            </div>
+            <Stats />
           </div>
         </div>
-        <div>
+        <div data-aos="fade" data-aos-offset="0">
           <a href="#menu" className="btn btn-success px-10 lg:w-52">
             TRY TOOL
           </a>
         </div>
       </section>
 
-      <section className="min-h-screen " id="menu">
+      <section className="min-h-screen" id="menu" data-aos="fade-up">
         <Cards />
       </section>
     </main>

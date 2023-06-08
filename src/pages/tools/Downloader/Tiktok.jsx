@@ -5,7 +5,10 @@ export default function Tiktok() {
   const [Input, SetInput] = useState("You're not input anything");
 
   return (
-    <div className="h-screen pt-[4rem] flex flex-col items-center ">
+    <div
+      data-aos="fade"
+      className="h-screen pt-[4rem] flex flex-col items-center "
+    >
       <div className="flex flex-col items-center gap-10 w-full py-10 bg-slate-400">
         <div className="flex flex-col text-center gap-4 text-black">
           <h1 className="text-4xl font-bold ">Tiktok Video Downloader</h1>
@@ -26,6 +29,7 @@ export default function Tiktok() {
 
             <div>
               <Alerts
+                id="my-modal"
                 buttonChildren="DOWNLOAD"
                 className="btn"
                 message={`This Features still Development. Your input: ${Input}`}

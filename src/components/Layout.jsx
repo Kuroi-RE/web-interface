@@ -9,7 +9,7 @@ export default function Layout() {
     <>
       <Nav />
       {/* <ParallaxProvider> */}
-      <div className="min-h-screen overflow-x-hidden">
+      <div className="min-h-screen">
         <Outlet />
       </div>
       {/* </ParallaxProvider> */}

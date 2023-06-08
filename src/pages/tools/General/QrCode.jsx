@@ -4,16 +4,20 @@ import Alerts from "../../../components/Utility/Alerts";
 const QrCode = () => {
   const [QrCodeUrl, SetQrCodeUrl] = useState("/images/qr/qr.png");
   const [InputFromUser, setInputFromUser] = useState("");
+  const API = import.meta.env.VITE_MAKE_QRCODE_API;
 
   const startUrlMaker = () => {
     if (InputFromUser.length > 1) {
-      const uri = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${InputFromUser}`;
+      const uri = `${API}${InputFromUser}`;
       SetQrCodeUrl(uri);
     }
   };
 
   return (
-    <div className="h-screen pt-[4rem] flex flex-col items-center justify-center gap-6">
+    <div
+      data-aos="fade-up"
+      className="h-screen pt-[4rem] flex flex-col items-center justify-center gap-6"
+    >
       <div className="flex flex-col text-center">
         <h1 className="text-4xl font-bold ">QR CODE MAKER</h1>
         <p>Input your text/url and get your qr code</p>
@@ -40,7 +44,7 @@ const QrCode = () => {
           className="btn w-full"
         />
 
-        <a href={`${QrCodeUrl}.jpg`} className="btn" download>
+        <a href={`${QrCodeUrl}`} className="btn" download="qrcode">
           Download
         </a>
       </div>

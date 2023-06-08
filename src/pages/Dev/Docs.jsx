@@ -6,10 +6,12 @@ export default function Docs() {
           <h2 className="text-2xl"># Clone this Project</h2>
           <div className="mockup-code">
             <pre data-prefix="$">
-              <code>git clone https://github.com</code>
+              <code>
+                git clone https://github.com/Kuroi-RE/web-interface.git
+              </code>
             </pre>
             <pre data-prefix="$">
-              <code>yarn add & npm install</code>
+              <code>yarn add</code>
             </pre>
             <pre data-prefix=">" className="text-warning">
               <code>installing...</code>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function GetQuotes() {
-  const Uri = "https://katanime.vercel.app/api/getrandom";
+  const Uri = import.meta.env.VITE_GET_ANIMEQUOTE_API;
 
   const [Language, SetLanguage] = useState("Indonesia");
 
@@ -43,7 +43,10 @@ export default function GetQuotes() {
   }
 
   return (
-    <div className="h-screen flex flex-col items-center pt-32">
+    <div
+      data-aos="fade-up"
+      className="h-screen flex flex-col items-center pt-32"
+    >
       <h1 className="text-xl font-bold">
         QUOTES by Anime <mark className="bg-blue-200">Character</mark>
       </h1>
@@ -74,7 +77,7 @@ export default function GetQuotes() {
         </div>
         <div>
           <button
-            className="btn btn-accent w-28 font-semibold"
+            className="btn btn-accent w-full font-semibold"
             onClick={() => GettingQuote()}
           >
             GET QUOTE

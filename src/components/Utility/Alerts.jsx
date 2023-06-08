@@ -14,11 +14,12 @@ const Alerts = ({
   message,
   className,
   onClick,
+  idModal,
 }) => {
   return (
     <div>
       <label
-        htmlFor="my-modal-3"
+        htmlFor={idModal ? idModal : "my-modal-2"}
         onClick={buttonOnClick}
         className={
           className ? `btn font-semibold ${className}` : "btn font-semibold"
@@ -28,11 +29,15 @@ const Alerts = ({
       </label>
 
       {/* Put this part before </body> tag */}
-      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <input
+        type="checkbox"
+        id={idModal ? idModal : "my-modal-2"}
+        className="modal-toggle"
+      />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor="my-modal-3"
+            htmlFor={idModal ? idModal : "my-modal-2"}
             onClick={onClick}
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
