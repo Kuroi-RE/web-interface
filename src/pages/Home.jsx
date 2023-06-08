@@ -70,10 +70,12 @@ export default function Home() {
             <Stats />
           </div>
         </div>
-        <div data-aos="fade" data-aos-offset="0">
-          <a href="#menu" className="btn btn-success px-10 lg:w-52">
-            TRY TOOL
-          </a>
+        <div data-delay="0" data-aos-offset="0">
+          <div>
+            <a href="#menu" className="btn btn-success px-10 lg:w-52">
+              TRY TOOL
+            </a>
+          </div>
         </div>
       </section>
 

@@ -43,7 +43,12 @@ function Cards() {
             );
           })}
         </div>
-        <div className="flex items-center justify-center mt-3 mb-5">
+        <div
+          data-aos="fade-up"
+          data-delay="0"
+          data-aos-offset="0"
+          className="flex items-center justify-center mt-3 mb-5"
+        >
           {isCompleted ? (
             <button
               onClick={LoadMore}

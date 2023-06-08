@@ -28,7 +28,7 @@ const CardsData = () => {
       id: 5,
       card_name: "Qr Code Scan",
       card_description: "Upload and Scan your QR",
-      card_path: "/postal-code", // Path link (/instagram or something)
+      card_path: "/qrcode-scan", // Path link (/instagram or something)
     },
     {
       id: 6,
