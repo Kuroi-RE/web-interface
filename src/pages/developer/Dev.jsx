@@ -1,8 +1,10 @@
+// import axios from "axios";
+
 export default function Docs() {
   return (
-    <div className="pt-24 flex flex-col">
-      <section className="h-screen flex flex-col gap-10">
-        <div className="px-5 flex flex-col gap-3">
+    <div className="flex flex-col pt-24">
+      <section className="flex h-screen flex-col gap-10">
+        <div className="flex flex-col gap-3 px-5">
           <h2 className="text-2xl"># Clone this Project</h2>
           <div className="mockup-code">
             <pre data-prefix="$">
@@ -21,7 +23,7 @@ export default function Docs() {
             </pre>
           </div>
         </div>
-        <div className="px-5 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 px-5">
           <div className="flex flex-col gap-4">
             <h2 className="text-2xl"># Running project</h2>
             <div className="alert alert-info shadow-lg">
@@ -30,7 +32,7 @@ export default function Docs() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  className="stroke-current flex-shrink-0 w-6 h-6"
+                  className="h-6 w-6 flex-shrink-0 stroke-current"
                 >
                   <path
                     strokeLinecap="round"

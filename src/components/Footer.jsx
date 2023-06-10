@@ -1,4 +1,4 @@
-import Ram from "./Utility/Link";
+import Ram from "../Utility/Link";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -7,15 +7,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center rounded bg-base-200 p-10 text-base-content">
       <div className="grid grid-flow-col gap-4">
-        <Link className="link link-hover" to="/about">
+        <Link className="link-hover link" to="/about">
           About us
         </Link>
-        <Link className="link link-hover" to="/">
+        <Link className="link-hover link" to="/">
           Contact
         </Link>
-        <Link className="link link-hover" to="/docs">
+        <Link className="link-hover link" to="/docs">
           Developer
         </Link>
       </div>

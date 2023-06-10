@@ -16,20 +16,20 @@ const PostalCode = () => {
       });
 
       SetKodeList(fetching.data.data);
-      console.log(fetching.data.data);
+      // console.log(fetching.data.data);
     }
   };
 
   return (
     <div
       data-aos="fade-up"
-      className="h-full pt-[6rem] flex flex-col pb-5 items-center gap-6"
+      className="flex h-full flex-col items-center gap-6 pb-5 pt-[6rem]"
     >
       <div className="flex flex-col gap-4 md:flex-row">
         <input
           type="text"
           name="kode"
-          className="input input-success"
+          className="input-success input"
           id="kode"
           onChange={(e) => SetKota(e.target.value)}
         />
@@ -42,8 +42,8 @@ const PostalCode = () => {
       </div>
 
       <div>
-        <div className="overflow-x-auto h-full w-[95vw] flex items-center justify-center">
-          <table className="table max-sm:table-compact p-5">
+        <div className="flex h-full w-[95vw] items-center justify-center overflow-x-auto">
+          <table className="table p-5 max-sm:table-compact">
             <thead>
               <tr>
                 <th></th>
@@ -53,7 +53,7 @@ const PostalCode = () => {
                 <td>Postal Code</td>
               </tr>
             </thead>
-            {KodeList.map((data, key) => {
+            {KodeList.forEach((data, key) => {
               return (
                 <tbody key={key}>
                   <tr>

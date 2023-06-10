@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Alerts from "../../../components/Utility/Alerts";
+import Alerts from "../../../Utility/Alerts";
 
 const QrCode = () => {
   const [QrCodeUrl, SetQrCodeUrl] = useState("/images/qr/qr.png");
@@ -16,14 +16,14 @@ const QrCode = () => {
   return (
     <div
       data-aos="fade-up"
-      className="h-screen pt-[4rem] flex flex-col items-center justify-center gap-6"
+      className="flex h-screen flex-col items-center justify-center gap-6 pt-[4rem]"
     >
       <div className="flex flex-col text-center">
         <h1 className="text-4xl font-bold ">QR CODE MAKER</h1>
         <p>Input your text/url and get your qr code</p>
       </div>
 
-      <div className="h-72 w-80 rounded-md border flex justify-center items-center">
+      <div className="flex h-72 w-80 items-center justify-center rounded-md border">
         <div>
           {" "}
           <img alt="" src={QrCodeUrl} />
@@ -33,7 +33,7 @@ const QrCode = () => {
         <input
           type="text"
           onChange={(e) => setInputFromUser(e.target.value)}
-          className="input input-bordered input-primary w-full max-w-xs"
+          className="input-bordered input-primary input w-full max-w-xs"
           required
         />
 

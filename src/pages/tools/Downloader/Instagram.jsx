@@ -1,45 +1,117 @@
 import { useState } from "react";
-import Alerts from "../../../components/Utility/Alerts";
+import Alerts from "../../../Utility/Alerts";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-export default function Instagram() {
-  const [Input, SetInput] = useState("You're not input anything");
+export default function Tiktok() {
+  const [Input, SetInput] = useState("");
+  const [Data, setData] = useState([]);
+  const [ResMsg, SetResMsg] = useState("Waiting data..");
+  const [IsReady, SetIsReady] = useState(false);
+  const [MsgBox, SetMsgBox] = useState(
+    "Check the Status and Download your video"
+  );
+
+  const APIKEY = import.meta.env.VITE_RAPID_APIKEY;
+
+  const Download = async () => {
+    if (Input.length > 5) {
+      const options = {
+        method: "GET",
+        url: "https://instagram-downloader-download-instagram-videos-stories.p.rapidapi.com/index",
+        params: {
+          url: Input,
+        },
+        headers: {
+          "X-RapidAPI-Key": APIKEY,
+          "X-RapidAPI-Host":
+            "instagram-downloader-download-instagram-videos-stories.p.rapidapi.com",
+        },
+      };
+      try {
+        SetResMsg("Proccessing data...");
+        const response = await axios.request(options);
+        console.log(response.data);
+
+        console.log(response.data);
+
+        for (let index = 0; index < response.data.media.length; index++) {
+          const element = response.data.media[index];
+          setData(element);
+        }
+
+        SetResMsg("Video Ready");
+        SetIsReady(true);
+      } catch (error) {
+        SetResMsg("Gagal Mendownload");
+        console.error(error);
+      }
+    } else {
+      SetMsgBox("Masukan data dengan benar");
+    }
+  };
+
+  console.log(Data);
 
   return (
     <div
       data-aos="fade"
-      className="h-screen pt-[4rem] flex flex-col items-center "
+      className="flex min-h-screen flex-col items-center pt-[4rem] "
     >
-      <div className="flex flex-col items-center gap-10 w-full py-10 bg-gradient-to-r from-[#C13584] to-[#833AB4]">
-        <div className="flex flex-col text-center gap-4 text-black">
+      <div className="flex w-full flex-col items-center gap-10 bg-gradient-to-r from-[#C13584] to-[#833AB4] py-10">
+        <div className="flex flex-col gap-4 text-center text-black">
           <h1 className="text-4xl font-bold ">
             Instagram Story, Reels Downloader
           </h1>
           <p>Input your link and Download that</p>
         </div>
         <div>
-          <div className="flex flex-col items-center md:flex-row gap-4">
-            <div className="rounded-md border w-full flex  items-center py-4 px-3 bg-white text-black">
+          <div className="flex flex-col items-center gap-4 md:flex-row">
+            <div className="flex w-full items-center rounded-md  border bg-white px-3 py-4 text-black">
               <input
                 type="url"
                 id="input"
                 onChange={(e) => SetInput(e.target.value)}
                 required
                 placeholder="Type here"
-                className="bg-transparent border-none w-80 outline-none"
+                className="w-80 border-none bg-transparent outline-none"
               />
             </div>
-
-            <div>
+            <div className="flex flex-row gap-5">
               <Alerts
-                buttonChildren="DOWNLOAD"
-                className="btn"
-                message={`This Features still Development. Your input: ${Input}`}
+                onClick={() => Download()}
+                buttonChildren="GET VIDEO"
+                message={MsgBox}
               />
+              <div>
+                {IsReady ? (
+                  <div>
+                    <Link to={Data} className="btn-success btn" download>
+                      Download
+                    </Link>
+                  </div>
+                ) : (
+                  <div>
+                    <a href="" className="btn-disabled btn">
+                      Download
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center gap-3">
+            <h2 className="text-2xl">STATUS: </h2>
+            <div className="mockup-code bg-blue-500">
+              <pre data-prefix="~">
+                <code>{ResMsg}</code>
+              </pre>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start px-5 gap-10 w-full py-10">
+      <div className="flex w-full flex-col items-start gap-10 px-5 py-10">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <svg
@@ -48,7 +120,7 @@ export default function Instagram() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -81,7 +153,7 @@ export default function Instagram() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -97,7 +169,7 @@ export default function Instagram() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-start px-5 gap-10 w-full py-10">
+      <div className="flex w-full flex-col items-start gap-10 px-5 py-10">
         <div className="flex flex-col gap-5">
           <div className="flex items-center gap-2">
             <svg
@@ -106,7 +178,7 @@ export default function Instagram() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -118,7 +190,7 @@ export default function Instagram() {
           </div>
           <div
             tabIndex="0"
-            className="collapse collapse-plus border border-base-300 bg-base-200"
+            className="collapse-plus collapse border border-base-300 bg-base-200"
           >
             <div className="collapse-title text-xl font-medium">
               This is Free?
@@ -129,7 +201,7 @@ export default function Instagram() {
                 totally free! but you can Support me with Donate!{" "}
                 <a
                   href="http://saweria.com/"
-                  className="underline hover:text-blue-600 delay-100 transition"
+                  className="underline transition delay-100 hover:text-blue-600"
                 >
                   Click Here
                 </a>
@@ -138,7 +210,7 @@ export default function Instagram() {
           </div>
           <div
             tabIndex="0"
-            className="collapse collapse-plus border border-base-300 bg-base-200"
+            className="collapse-plus collapse border border-base-300 bg-base-200"
           >
             <div className="collapse-title text-xl font-medium">
               How to Download videos without Watermark?

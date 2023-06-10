@@ -6,7 +6,7 @@ import { slice } from "lodash";
 function Cards() {
   const [CardData, setCardData] = useState([CardsData()]);
   const [isCompleted, setIsCompleted] = useState(false);
-  const [index, setIndex] = useState(3);
+  const [index, setIndex] = useState(4);
   const initialPosts = slice(CardData, 0, index);
 
   const getData = () => {
@@ -14,7 +14,7 @@ function Cards() {
   };
 
   const LoadMore = () => {
-    setIndex(index + 3);
+    setIndex(index + 4);
     if (index >= CardData.length) {
       setIsCompleted(true);
     } else {
@@ -27,13 +27,13 @@ function Cards() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-5 pt-24 pb-5 ">
+    <div className="flex flex-col items-center gap-5 pb-5 pt-24 ">
       <div className="flex flex-col  md:gap-20">
-        <div className="px-10 py-5 flex items-center justify-center flex-col flex-wrap md:flex-row md:gap-20 gap-5 ">
+        <div className="flex flex-col flex-wrap items-center justify-center gap-5 px-10 py-5 md:flex-row md:gap-20 ">
           {/* CARDs  */}
-          {initialPosts.map((data) => {
+          {initialPosts.map((data, key) => {
             return (
-              <div data-aos="fade-up" key={data.id}>
+              <div data-aos="fade-up" key={key}>
                 <CardsList
                   card_name={data.card_name}
                   card_description={data.card_description}
@@ -47,13 +47,13 @@ function Cards() {
           data-aos="fade-up"
           data-delay="0"
           data-aos-offset="0"
-          className="flex items-center justify-center mt-3 mb-5"
+          className="mb-5 mt-3 flex items-center justify-center"
         >
           {isCompleted ? (
             <button
               onClick={LoadMore}
               type="button"
-              className="btn btn-error disabled"
+              className="btn-error disabled btn"
             >
               Completed
             </button>
@@ -61,7 +61,7 @@ function Cards() {
             <button
               onClick={LoadMore}
               type="button"
-              className="btn btn-success"
+              className="btn-success btn"
             >
               Load More
             </button>

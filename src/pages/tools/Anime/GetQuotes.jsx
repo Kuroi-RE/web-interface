@@ -30,14 +30,6 @@ export default function GetQuotes() {
     }
   };
 
-  // function SelectHandle(obj) {
-  //   if (obj.value === "English") {
-  //     SetLanguage("english");
-  //   } else {
-  //     SetLanguage("indo");
-  //   }
-  // }
-
   function copy() {
     navigator.clipboard.writeText(Quotes.quote);
   }
@@ -45,12 +37,12 @@ export default function GetQuotes() {
   return (
     <div
       data-aos="fade-up"
-      className="h-screen flex flex-col items-center pt-32"
+      className="flex h-screen flex-col items-center pt-32"
     >
       <h1 className="text-xl font-bold">
         QUOTES by Anime <mark className="bg-blue-200">Character</mark>
       </h1>
-      <div className="py-20 px-4 flex justify-center items-center text-center">
+      <div className="flex items-center justify-center px-4 py-20 text-center">
         <div>
           <p className="italic">{Quotes.quote}</p>
           <span className="font-bold"> {Quotes.char} </span>
@@ -66,7 +58,7 @@ export default function GetQuotes() {
           <select
             defaultValue={"NOTE"}
             onChange={(e) => SetLanguage(e.target.value)}
-            className="select select-info w-full max-w-xs"
+            className="select-info select w-full max-w-xs"
           >
             <option disabled value="NOTE">
               Select language
@@ -77,15 +69,14 @@ export default function GetQuotes() {
         </div>
         <div>
           <button
-            className="btn btn-accent w-full font-semibold"
+            className="btn-accent btn w-full font-semibold"
             onClick={() => GettingQuote()}
           >
             GET QUOTE
           </button>
         </div>
-        {/* The button to open modal */}
+
         <div>
-          {/* The button to open modal */}
           <label
             htmlFor="my-modal-3"
             className="btn w-28 font-semibold"
@@ -94,13 +85,12 @@ export default function GetQuotes() {
             Copy
           </label>
 
-          {/* Put this part before </body> tag */}
           <input type="checkbox" id="my-modal-3" className="modal-toggle" />
           <div className="modal">
             <div className="modal-box relative">
               <label
                 htmlFor="my-modal-3"
-                className="btn btn-sm btn-circle absolute right-2 top-2"
+                className="btn-sm btn-circle btn absolute right-2 top-2"
               >
                 ✕
               </label>

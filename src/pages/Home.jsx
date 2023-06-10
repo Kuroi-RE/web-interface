@@ -15,30 +15,29 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col font-primary overflow-hidden">
+    <main className="flex flex-col overflow-hidden font-primary">
       <section
         id="start"
         data-aos="zoom-in-up"
-        // ref={parallax.ref}
-        className="h-screen flex flex-col gap-12 md:justify-center lg:justify-start lg:pt-32 lg:flex-row lg:gap-24"
+        className="flex h-screen flex-col gap-12 md:justify-center lg:flex-row lg:justify-start lg:gap-24 lg:pt-32"
       >
-        <div className="flex flex-col pt-36 px-6 md:px-0 gap-6">
+        <div className="flex flex-col gap-6 px-6 pt-36 md:px-0">
           <div className="md:pl-3">
-            <h3 className="text-xs px-3 md:text-xl lg:text-2xl">
+            <h3 className="px-3 text-xs md:text-xl lg:text-2xl">
               # Free to use
             </h3>
-            <h1 className="text-5xl font-secondary tracking-wider md:text-7xl lg:text-8xl font-bold text-primary">
+            <h1 className="font-secondary text-5xl font-bold tracking-wider text-primary md:text-7xl lg:text-8xl">
               IN ONE TOOLS APPLICATION
             </h1>
-            <p className="text-lg px-2 md:text-xl lg:text-2xl">
+            <p className="px-2 text-lg md:text-xl lg:text-2xl">
               You can use a tool very easy, free, safe. Try it now!
             </p>
           </div>
-          <div className="flex gap-4 px-5">
-            <Link to="/docs" className="btn btn-info">
+          <div className="flex gap-4 md:pl-4">
+            <Link to="/docs" className="btn-info btn">
               DEV
             </Link>
-            <a href="#stats" className="btn btn-accent">
+            <a href="#stats" className="btn-accent btn">
               GET STARTED
             </a>
           </div>
@@ -49,8 +48,7 @@ export default function Home() {
             speed={1.5}
             loop
             src="https://assets10.lottiefiles.com/packages/lf20_RNUshsKFRE.json"
-            // style={{ height: "300px", width: "300px" }}
-            className="sm:h-80 sm:m-80 md:h-[450px] md:w-[450px] lg:h-[500px] lg:w-[500px] lg:pr-10"
+            className="sm:m-80 sm:h-80 md:h-[450px] md:w-[450px] lg:h-[500px] lg:w-[500px] lg:pr-10"
           >
             <Controls visible={false} />
           </Player>
@@ -58,21 +56,19 @@ export default function Home() {
       </section>
       <section
         id="stats"
-        // ref={parallax2.ref}
-
-        className="h-screen flex flex-col items-center gap-5 justify-center"
+        className="flex h-screen flex-col items-center justify-center gap-5"
       >
         <div data-aos="zoom-in">
-          <h1 className="text-4xl font-bold font-serif lg:text-5xl">WE HAVE</h1>
+          <h1 className="font-serif text-4xl font-bold lg:text-5xl">WE HAVE</h1>
         </div>
         <div data-aos="zoom-in">
-          <div className="stats w-80 text-center stats-vertical lg:stats-horizontal lg:w-[800px] shadow">
+          <div className="stats stats-vertical w-80 text-center shadow lg:stats-horizontal lg:w-[800px]">
             <Stats />
           </div>
         </div>
         <div data-delay="0" data-aos-offset="0">
           <div>
-            <a href="#menu" className="btn btn-success px-10 lg:w-52">
+            <a href="#menu" className="btn-success btn px-10 lg:w-52">
               TRY TOOL
             </a>
           </div>

@@ -9,10 +9,10 @@ export default function Nav() {
   }, []);
 
   return (
-    <div className="navbar bg-base-100 fixed top-0 right-0 left-0 z-50">
+    <div className="navbar fixed left-0 right-0 top-0 z-50 bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
+          <label tabIndex={0} className="btn-ghost btn-circle btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -30,7 +30,7 @@ export default function Nav() {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-3 shadow-sm shadow-slate-200 bg-base-100 rounded-box w-52"
+            className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-3 shadow-sm shadow-slate-200"
           >
             <li>
               <Link to="/">HOME</Link>
@@ -42,7 +42,7 @@ export default function Nav() {
         </div>
       </div>
       <div className="navbar-center">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn-ghost btn text-xl normal-case">
           APP TOOL
         </Link>
       </div>
@@ -52,7 +52,7 @@ export default function Nav() {
 
           <svg
             data-set-theme="cmyk"
-            className="swap-on fill-current w-7 h-7"
+            className="swap-on h-7 w-7 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -61,7 +61,7 @@ export default function Nav() {
 
           <svg
             data-set-theme="night"
-            className="swap-off fill-current w-7 h-7"
+            className="swap-off h-7 w-7 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

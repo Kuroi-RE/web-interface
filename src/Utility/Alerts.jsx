@@ -39,7 +39,7 @@ const Alerts = ({
           <label
             htmlFor={idModal ? idModal : "my-modal-2"}
             onClick={onClick}
-            className="btn btn-sm btn-circle absolute right-2 top-2"
+            className="btn-sm btn-circle btn absolute right-2 top-2"
           >
             ✕
           </label>

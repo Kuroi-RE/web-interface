@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Alerts from "../../../components/Utility/Alerts";
+import Alerts from "../../../Utility/Alerts";
 import generator from "generate-password-browser";
 
 const PasswordGenerator = () => {
@@ -28,19 +28,19 @@ const PasswordGenerator = () => {
   return (
     <div
       data-aos="fade-up"
-      className="h-screen pt-[4rem] flex flex-col items-center justify-center gap-6"
+      className="flex h-screen flex-col items-center justify-center gap-6 pt-[4rem]"
     >
       <div className="flex flex-col text-center">
         <h1 className="text-4xl font-bold ">PASSWORD MAKER</h1>
         <p>Click create and copy your secret password</p>
       </div>
 
-      <div className="h-44 w-80 rounded-md border flex justify-center items-center">
+      <div className="flex h-44 w-80 items-center justify-center rounded-md border">
         <div>
           <h3>{Password}</h3>
         </div>
       </div>
-      <div className="flex flex-col gap-4 items-center md:flex-row">
+      <div className="flex flex-col items-center gap-4 md:flex-row">
         <label htmlFor="num" className="text-1xl">
           Password Length :
         </label>
@@ -50,10 +50,10 @@ const PasswordGenerator = () => {
           id="num"
           defaultValue="8"
           onChange={(e) => SetLength(e.target.value)}
-          className="input input-success"
+          className="input-success input"
         />
       </div>
-      <div className="flex flex-col gap-5 w-full items-center">
+      <div className="flex w-full flex-col items-center gap-5">
         <Alerts
           buttonChildren="Create"
           idModal="my-modal"

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
-import Alerts from "../../../components/Utility/Alerts";
+import Alerts from "../../../Utility/Alerts";
 
 const ScanQr = () => {
   //   const [QrCodeUrl, SetQrCodeUrl] = useState("/images/qr/qr.png");
@@ -35,15 +35,15 @@ const ScanQr = () => {
   }, []);
 
   return (
-    <div className="h-screen pt-[4rem] flex flex-col items-center justify-center gap-6">
+    <div className="flex h-screen flex-col items-center justify-center gap-6 pt-[4rem]">
       <div className="flex flex-col text-center">
         <h1 className="text-4xl font-bold ">SCAN QRCODE</h1>
         <p>Upload your Qr code</p>
       </div>
 
       {ScanResult ? (
-        <div className="h-72 w-80 bg-slate-500 flex justify-center items-center border-solid">
-          <div className="flex flex-col text-center gap-5">
+        <div className="flex h-72 w-80 items-center justify-center border-solid bg-slate-500">
+          <div className="flex flex-col gap-5 text-center">
             <h1 className="text-2xl font-semibold">RESULT: </h1>
             <h3>{ScanResult}</h3>
             <Alerts
@@ -55,7 +55,7 @@ const ScanQr = () => {
           </div>
         </div>
       ) : (
-        <div className="h-72 w-80 text-base bg-slate-500" id="reader"></div>
+        <div className="h-72 w-80 bg-slate-500 text-base" id="reader"></div>
       )}
 
       <div>powered by ScanApp</div>

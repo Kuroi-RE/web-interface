@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Alerts from "../../../components/Utility/Alerts";
+import Alerts from "../../../Utility/Alerts";
 
 export default function Tiktok() {
   const [Input, SetInput] = useState("You're not input anything");
@@ -7,23 +7,23 @@ export default function Tiktok() {
   return (
     <div
       data-aos="fade"
-      className="h-screen pt-[4rem] flex flex-col items-center "
+      className="flex min-h-screen flex-col items-center pt-[4rem] "
     >
-      <div className="flex flex-col items-center gap-10 w-full py-10 bg-slate-400">
-        <div className="flex flex-col text-center gap-4 text-black">
+      <div className="flex w-full flex-col items-center gap-10 bg-slate-400 py-10">
+        <div className="flex flex-col gap-4 text-center text-black">
           <h1 className="text-4xl font-bold ">Tiktok Video Downloader</h1>
           <p>Input your link and Download that</p>
         </div>
         <div>
-          <div className="flex flex-col items-center md:flex-row gap-4">
-            <div className="rounded-md border w-full flex  items-center py-4 px-3 bg-white text-black">
+          <div className="flex flex-col items-center gap-4 md:flex-row">
+            <div className="flex w-full items-center rounded-md  border bg-white px-3 py-4 text-black">
               <input
                 type="url"
                 id="input"
                 onChange={(e) => SetInput(e.target.value)}
                 required
                 placeholder="Type here"
-                className="bg-transparent border-none w-80 outline-none"
+                className="w-80 border-none bg-transparent outline-none"
               />
             </div>
 
@@ -38,7 +38,7 @@ export default function Tiktok() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start px-5 gap-10 w-full py-10">
+      <div className="flex w-full flex-col items-start gap-10 px-5 py-10">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
             <svg
@@ -47,7 +47,7 @@ export default function Tiktok() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -71,7 +71,7 @@ export default function Tiktok() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -88,7 +88,7 @@ export default function Tiktok() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col items-start px-5 gap-10 w-full py-10">
+      <div className="flex w-full flex-col items-start gap-10 px-5 py-10">
         <div className="flex flex-col gap-5">
           <div className="flex items-center gap-2">
             <svg
@@ -97,7 +97,7 @@ export default function Tiktok() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -109,7 +109,7 @@ export default function Tiktok() {
           </div>
           <div
             tabIndex="0"
-            className="collapse collapse-plus border border-base-300 bg-base-200"
+            className="collapse-plus collapse border border-base-300 bg-base-200"
           >
             <div className="collapse-title text-xl font-medium">
               This is Free?
@@ -120,7 +120,7 @@ export default function Tiktok() {
                 totally free! but you can Support me with Donate!{" "}
                 <a
                   href="http://saweria.com/"
-                  className="underline hover:text-blue-600 delay-100 transition"
+                  className="underline transition delay-100 hover:text-blue-600"
                 >
                   Click Here
                 </a>
@@ -129,7 +129,7 @@ export default function Tiktok() {
           </div>
           <div
             tabIndex="0"
-            className="collapse collapse-plus border border-base-300 bg-base-200"
+            className="collapse-plus collapse border border-base-300 bg-base-200"
           >
             <div className="collapse-title text-xl font-medium">
               How to Download videos without Watermark?

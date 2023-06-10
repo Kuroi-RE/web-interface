@@ -23,7 +23,6 @@ This is Utilities App. Try it.
 ## Features
 
 - Light/dark mode
-- Docs
 - Responsive
 - Fullscreen mod
 - 5+ Tool Available
