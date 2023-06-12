@@ -1,18 +1,13 @@
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
-import AOS from "aos";
+import ScrollEffect from "../Utility/ScrollEffect";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import Cards from "../components/Home/Cards/Cards";
 import Stats from "../components/Home/Stats/Stats";
-import { useEffect } from "react";
+
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 600,
-      easing: "ease-in-sine",
-      delay: 100,
-    });
-  }, []);
+
+  ScrollEffect()
 
   return (
     <main className="flex flex-col overflow-hidden font-primary">
