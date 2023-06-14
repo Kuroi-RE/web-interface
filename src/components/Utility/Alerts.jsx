@@ -1,13 +1,3 @@
-// import PropTypes from "prop-types";
-
-// Alerts.propTypes = {
-//   buttonChildren: PropTypes.string,
-//   message: PropTypes.string,
-//   className: PropTypes.string,
-//   onClick: PropTypes.object,
-//   buttonOnClick: PropTypes.object,
-// };
-
 const Alerts = ({
   buttonChildren,
   buttonOnClick,

@@ -1,6 +1,6 @@
 import CardsData from "../Cards/CardsData";
 
-const Stats = () => {
+const Index = () => {
   const Stats = {
     value1: CardsData().length,
     value2: CardsData().length - 2,
@@ -29,4 +29,4 @@ const Stats = () => {
   );
 };
 
-export default Stats;
+export default Index;

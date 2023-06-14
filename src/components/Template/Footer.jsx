@@ -9,13 +9,13 @@ export default function Footer() {
   return (
     <footer className="footer footer-center rounded bg-base-200 p-10 text-base-content">
       <div className="grid grid-flow-col gap-4">
-        <Link className="link-hover link" to="/about">
-          About us
-        </Link>
-        <Link className="link-hover link" to="/">
+        <Link
+          className="link-hover link"
+          onClick={() => openLink(Ram().instagram)}
+        >
           Contact
         </Link>
-        <Link className="link-hover link" to="/docs">
+        <Link className="link-hover link" to="/developer">
           Developer
         </Link>
       </div>

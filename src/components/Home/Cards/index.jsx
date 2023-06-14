@@ -3,7 +3,7 @@ import CardsData from "./CardsData";
 import CardsList from "./CardsList";
 import { slice } from "lodash";
 
-function Cards() {
+function Index() {
   const [CardData, setCardData] = useState([CardsData()]);
   const [isCompleted, setIsCompleted] = useState(false);
   const [index, setIndex] = useState(4);
@@ -73,4 +73,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Index;

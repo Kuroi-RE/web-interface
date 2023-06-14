@@ -1,6 +1,4 @@
-// import axios from "axios";
-
-export default function Docs() {
+export default function Developer() {
   return (
     <div className="flex flex-col pt-24">
       <section className="flex h-screen flex-col gap-10">

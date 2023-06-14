@@ -1,8 +1,21 @@
 import { useState } from "react";
-import Alerts from "../../../Utility/Alerts";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function Tiktok() {
   const [Input, SetInput] = useState("You're not input anything");
+
+  const Alert = withReactContent(Swal);
+
+  const alerting = () => {
+    Alert.fire({
+      position: "center",
+      icon: "info",
+      timer: 1500,
+      timerProgressBar: true,
+      titleText: `This Features still Development. Your input: ${Input}`,
+    });
+  };
 
   return (
     <div
@@ -28,12 +41,9 @@ export default function Tiktok() {
             </div>
 
             <div>
-              <Alerts
-                id="my-modal"
-                buttonChildren="DOWNLOAD"
-                className="btn"
-                message={`This Features still Development. Your input: ${Input}`}
-              />
+              <button className="btn-success btn" onClick={() => alerting()}>
+                DOWNLOAD
+              </button>
             </div>
           </div>
         </div>

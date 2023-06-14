@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Alerts from "../../../Utility/Alerts";
+import Alerts from "../../../components/Utility/Alerts";
 import { Link } from "react-router-dom";
 import axios from "axios";
 

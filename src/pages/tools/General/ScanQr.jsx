@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
-import Alerts from "../../../Utility/Alerts";
+import Alerts from "../../../components/Utility/Alerts";
 
 const ScanQr = () => {
   //   const [QrCodeUrl, SetQrCodeUrl] = useState("/images/qr/qr.png");

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Alerts from "../../../Utility/Alerts";
+import Alerts from "../../../components/Utility/Alerts";
 
 const QrCode = () => {
   const [QrCodeUrl, SetQrCodeUrl] = useState("/images/qr/qr.png");
