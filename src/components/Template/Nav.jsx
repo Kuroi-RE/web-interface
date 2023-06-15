@@ -36,7 +36,7 @@ export default function Nav() {
               <Link to="/">HOME</Link>
             </li>
             <li>
-              <Link to="/docs">DEVELOPER</Link>
+              <Link to="/developer">DEVELOPER</Link>
             </li>
           </ul>
         </div>
