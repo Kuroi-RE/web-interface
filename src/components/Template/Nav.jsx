@@ -35,9 +35,6 @@ export default function Nav() {
             <li>
               <Link to="/">HOME</Link>
             </li>
-            <li>
-              <Link to="/developer">DEVELOPER</Link>
-            </li>
           </ul>
         </div>
       </div>

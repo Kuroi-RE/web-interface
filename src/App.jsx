@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Wrapper from "./components/Utility/Wrapper";
 import Layout from "./components/Template/Layout";
-import Developer from "./pages/Developer";
 import Error from "./pages/Error";
 import GetQuotes from "./pages/tools/Anime/GetQuotes";
 import Tiktok from "./pages/tools/Downloader/Tiktok";
@@ -10,7 +9,6 @@ import QrCode from "./pages/tools/General/QrCode";
 import PasswordGenerator from "./pages/tools/General/PasswordGenerator";
 import PostalCode from "./pages/tools/General/PostalCode";
 import ScanQr from "./pages/tools/General/ScanQr";
-
 import Loader from "./components/Utility/Loader";
 
 import React, { Suspense } from "react";
@@ -19,7 +17,6 @@ import CekResi from "./pages/tools/General/CekResi";
 const Home = React.lazy(() => import("./pages/Home"));
 
 function App() {
-
   return (
     <Suspense fallback={<Loader height={1000} />}>
       <BrowserRouter>
@@ -27,8 +24,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
-
-              <Route path="/developer" element={<Developer />} />
 
               {/* Anime Route */}
               <Route path="/get-quotes" element={<GetQuotes />} />

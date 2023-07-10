@@ -43,11 +43,11 @@ export default function Tiktok() {
         SetResMsg("Video Ready");
         SetIsReady(true);
       } catch (error) {
-        SetResMsg("Gagal Mendownload");
+        SetResMsg("Failed to Download");
         console.error(error);
       }
     } else {
-      SetMsgBox("Masukan data dengan benar");
+      SetMsgBox("I think your url incorrect");
     }
   };
 

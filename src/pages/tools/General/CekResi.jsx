@@ -6,14 +6,14 @@ const CekResi = () => {
   const [Resi, SetResi] = useState("");
   const [Data, SetData] = useState([]);
   const [IsDone, SetIsDone] = useState(false);
-  const [ErrMsg, SetErrMsg] = useState("MENUNGGU DATA..");
+  const [ErrMsg, SetErrMsg] = useState("WAITING DATA DATA..");
 
   const URI = `https://api.binderbyte.com/v1/track?api_key=${API_KEY}&courier=${Courier}&awb=${Resi}`;
 
   const GetData = async () => {
     if (Resi.length > 5) {
       try {
-        SetErrMsg("MENCARI DATA...");
+        SetErrMsg("SEARCHING DATA...");
         const fetching = await axios({
           url: URI,
           method: "GET",
@@ -23,7 +23,7 @@ const CekResi = () => {
         // console.log(fetching.data.data);
       } catch (error) {
         SetIsDone(false);
-        SetErrMsg("TIDAK ADA DATA.");
+        SetErrMsg("DATA NOT FOUND.");
       }
     }
   };
@@ -45,7 +45,7 @@ const CekResi = () => {
           className="select-info select w-full max-w-xs"
         >
           <option disabled value="NOTE">
-            Pilih Kurir
+            Select Courier
           </option>
           <option>JNT</option>
           <option>JNE</option>
@@ -67,7 +67,7 @@ const CekResi = () => {
         {IsDone ? (
           <div>
             <div className="flex  justify-center ">
-              <h1 className="text-3xl">DATA DITEMUKAN :</h1>
+              <h1 className="text-3xl">FOUND A DATA :</h1>
             </div>
             <div>
               <div className="flex  justify-center ">

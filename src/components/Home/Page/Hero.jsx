@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 function Hero() {
@@ -22,9 +21,6 @@ function Hero() {
           <a href="#stats" className="btn-accent btn">
             GET STARTED
           </a>
-          <Link to="/developer" className="btn-info btn">
-            DEVELOPER
-          </Link>
         </div>
       </div>
       <div>
